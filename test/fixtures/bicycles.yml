@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  manufacturer: MyString
+  model: MyString
+  model_year: 1
+  store_id: 
+  customer_id: 
+
+two:
+  manufacturer: MyString
+  model: MyString
+  model_year: 1
+  store_id: 
+  customer_id: 

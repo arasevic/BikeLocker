@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  labor_type: MyString
+  man_hours: 1.5
+  cost: 1.5
+
+two:
+  labor_type: MyString
+  man_hours: 1.5
+  cost: 1.5

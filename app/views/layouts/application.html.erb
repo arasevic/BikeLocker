@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>LaborScheduler</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>Revolution Cycles Portal</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="navbar navbar-header">
+        <a class="navbar-brand" href="#">Revolution Cycles Customer Portal</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><%= link_to "Home", root_path %></li>
+        
+        <% if customer_signed_in? %>
+          <li><%= link_to "Sign out", destroy_customer_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to "Sign up", new_customer_registration_path %></li>
+          <li><%= link_to "Sign in", new_customer_session_path %></li>
+        <% end %>
+      </ul>
+      <%= image_tag("revolution_cycles-va.png", size: "50x50", class: "pull-right") %>
+    </nav>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
 
-<%= yield %>
+    <%= yield %>
 
-</body>
+  </body>
 </html>

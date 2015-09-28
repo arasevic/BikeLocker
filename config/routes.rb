@@ -3,7 +3,11 @@ Rails.application.routes.draw do
   devise_for :customers
 
   resources :bicycles
-  resources :repairs
+  
+
+  resources :bicycles do
+    resources :repairs
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

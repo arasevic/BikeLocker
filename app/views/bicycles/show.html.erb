@@ -7,8 +7,8 @@
 
 </div>
 
-<%= link_to "Create a new repair ticket" %></br>
+<%= link_to "Create a new repair ticket", new_bicycle_repair_path(@bicycle) %></br>
 
-<%= link_to "Get the repair history for this bike" %></br>
+<%= link_to "Get the repair history for this bike", bicycle_repairs_path(@bicycle) %></br>
 
-<%= link_to "Return to your complete inventory", bicycles_path %></br>
+<%= link_to "Return to your bike locker", bicycles_path %></br>

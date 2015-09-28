@@ -1,0 +1,18 @@
+<h3>Repair log for <%=@bicycle.manufacturer%> <%=@bicycle.model%></h3>
+<ul>
+<% @repairs.each do |repair| %>
+	<li>
+		<p>Service requested: <%= repair.service_requested %> </p>
+		<p>Date Scheduled: <%= repair.date_scheduled %> </p>
+		<% if repair.date_completed == nil %>
+			<p>Pending</p>
+			<% else %>
+			<p>Date Completed: <%= repair.date_completed %> </p>
+			<p>Completed by: <%= repair.performed_by %> </p>
+			<p>Notes: <%= repair.notes %> </p>
+		<% end %>
+	</li>	
+	<% end %>
+</ul>
+</br>
+<%= link_to "Return to your bike locker", bicycles_path %>

@@ -1,15 +1,16 @@
-<h1>My Personal Garage</h1>
+<h1>My Bike Inventory</h1>
 <section>
-	<% if defined? @bicylces %>
-  	<% @bicylces.each do |bicycle| %>
+	<% if defined? @bicycles %>
+  	<% @bicycles.each do |bicycle| %>
     	<article>
       	<section>
-        	<h3><%= link_to bicycle.model, bicycle %></h3>
+        	<h3><%= link_to bicycle.model, bicycle_path(bicycle) %></h3>
         
       	</section>
     	</article>
   	<% end %>
   <% end %>
 
-  <%= link_to "Add your bicycle", new_bicycle_path %>
+  <%= link_to "Add a new bicycle", new_bicycle_path %>
+	
 </section>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150926220519) do
+ActiveRecord::Schema.define(version: 20150928151042) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "f_name"
@@ -71,39 +71,17 @@ ActiveRecord::Schema.define(version: 20150926220519) do
   add_index "customers", ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
 
   create_table "repairs", force: :cascade do |t|
-    t.string   "labor_type"
-    t.float    "man_hours"
-    t.float    "cost"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "service_requested"
+    t.datetime "date_scheduled"
+    t.datetime "date_completed"
+    t.string   "performed_by"
+    t.boolean  "is_finished"
+    t.text     "notes"
+    t.integer  "bicycle_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
-  create_table "stores", force: :cascade do |t|
-    t.string   "stree_address"
-    t.string   "city"
-    t.string   "state"
-    t.string   "zip_code"
-    t.string   "phone_number"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-  end
-
-  create_table "work_days", force: :cascade do |t|
-    t.datetime "date"
-    t.float    "available_man_hours"
-    t.float    "scheduled_man_hours"
-    t.float    "total_man_hours"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
-  end
-
-  create_table "work_orders", force: :cascade do |t|
-    t.boolean  "finished"
-    t.integer  "customer_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  add_index "work_orders", ["customer_id"], name: "index_work_orders_on_customer_id"
+  add_index "repairs", ["bicycle_id"], name: "index_repairs_on_bicycle_id"
 
 end

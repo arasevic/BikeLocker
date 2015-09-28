@@ -7,6 +7,7 @@ class BicyclesController < ApplicationController
 
 	def show
     @bicycle = current_customer.bicycles.find(params[:id])
+
   end
 
   def new
@@ -17,7 +18,7 @@ class BicyclesController < ApplicationController
   	@bicycle = current_customer.bicycles.build safe_bicycle_params
   
     if @bicycle.save
-      flash[:notice] = "Bicycle Built Successfully"
+      flash[:notice] = "This Bike was just added to your locker successfully:"
       redirect_to bicycle_path(@bicycle)
     else
       flash.now[:alert] = @bicycle.errors.first

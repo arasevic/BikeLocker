@@ -1,11 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  labor_type: MyString
-  man_hours: 1.5
-  cost: 1.5
+  service_requested: MyString
+  date_scheduled: 2015-09-28 11:10:42
+  date_completed: 2015-09-28 11:10:42
+  performed_by: MyString
+  is_finished: false
+  notes: MyText
+  bicycle_id: 
 
 two:
-  labor_type: MyString
-  man_hours: 1.5
-  cost: 1.5
+  service_requested: MyString
+  date_scheduled: 2015-09-28 11:10:42
+  date_completed: 2015-09-28 11:10:42
+  performed_by: MyString
+  is_finished: false
+  notes: MyText
+  bicycle_id: 

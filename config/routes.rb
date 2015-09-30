@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :admins
-  devise_for :customers
+  devise_for :admins, :path_names => {:sign_in => 'login', :sign_out => 'logout'}
+  devise_for :customers, :path_names => {:sign_in => 'login', :sign_out => 'logout'}
 
   resources :bicycles
   
@@ -8,6 +8,11 @@ Rails.application.routes.draw do
   resources :bicycles do
     resources :repairs
   end
+
+
+  namespace :admin do
+    resources :repairs
+  end  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

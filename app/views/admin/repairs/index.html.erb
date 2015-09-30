@@ -1,0 +1,29 @@
+<h3>Active Repair Log</h3>
+<section>
+	<% if defined? @repairs %>
+  	<% @repairs.each do |repair| %>
+    	<article>
+      	<section>
+        	<h5><%= link_to "#{repair.bicycle.model} - #{repair.service_requested}", edit_admin_repair_path(repair) %></h5>
+        
+      	</section>
+    	</article>
+  	<% end %>
+  <% end %>
+	
+</section>
+
+<h3>Completed Repair Log</h3>
+<section>
+  <% if defined? @completed_repairs %>
+    <% @completed_repairs.each do |completed_repair| %>
+      <article>
+        <section>
+          <h5><%= link_to completed_repair.service_requested, admin_repair_path(completed_repair) %></h5>
+        
+        </section>
+      </article>
+    <% end %>
+  <% end %>
+  
+</section>

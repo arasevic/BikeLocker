@@ -9,16 +9,18 @@
   <body>
     <nav class="navbar navbar-default">
       <div class="navbar navbar-header">
-        <a class="navbar-brand" href="#">Revolution Cycles Customer Portal</a>
+        <a class="navbar-brand" href="#">Revolution Cycles Bike Locker</a>
       </div>
       <ul class="nav navbar-nav">
         <li><%= link_to "Home", root_path %></li>
         
         <% if customer_signed_in? %>
-          <li><%= link_to "Sign out", destroy_customer_session_path, method: :delete %></li>
+          <li><%= link_to "Log out", destroy_customer_session_path, method: :delete %></li>
+        <% elsif admin_signed_in? %>
+          <li><%= link_to "Log out", destroy_admin_session_path, method: :delete %></li>  
         <% else %>
           <li><%= link_to "Sign up", new_customer_registration_path %></li>
-          <li><%= link_to "Sign in", new_customer_session_path %></li>
+          <li><%= link_to "Log in", new_customer_session_path %></li>
         <% end %>
       </ul>
       <%= image_tag("revolution_cycles-va.png", size: "50x50", class: "pull-right") %>

@@ -1,0 +1,7 @@
+<h4><%= "#{@repair.bicycle.model} - #{@repair.service_requested}" %></h4>
+<h4>Completed by: <%= "#{@repair.performed_by}" %></h4>
+<h4>Notes: <%= "#{@repair.notes}" %></h4>
+<h4>Completed on: <%= "#{@repair.date_completed}" %></h4>
+</br></br>
+<h5><%= link_to "Return to repair log", admin_repairs_path %></h5>
+

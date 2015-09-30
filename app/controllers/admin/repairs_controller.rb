@@ -1,4 +1,6 @@
 class Admin::RepairsController < ApplicationController
+	before_filter :authenticate_admin!
+	
 	def index
 		@repairs = Repair.where(:is_finished => nil)
 		@completed_repairs = Repair.where(:is_finished => true)
